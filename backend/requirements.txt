@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+sqlglot
+python-dotenv
+google-genai
+cryptography
+python-multipart
+openpyxl

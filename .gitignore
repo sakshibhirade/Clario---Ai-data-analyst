@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+backend/.encryption_key
+backend/app/services/.auth_secret_key
+backend/data_uploads/*.db
+dist/
+.DS_Store

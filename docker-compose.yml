@@ -1,0 +1,20 @@
+# One-command local Postgres with the Clario sample data.
+#   docker compose up -d
+# Then set in backend/.env:
+#   DATABASE_URL=postgresql+psycopg2://clario:clario@localhost:5432/ai_data_analyst
+services:
+  db:
+    image: postgres:16
+    container_name: clario-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: clario
+      POSTGRES_PASSWORD: clario
+      POSTGRES_DB: ai_data_analyst
+    ports:
+      - "5432:5432"
+    volumes:
+      - clario-pgdata:/var/lib/postgresql/data
+      - ./backend/db/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+volumes:
+  clario-pgdata:
